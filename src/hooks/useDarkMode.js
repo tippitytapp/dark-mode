@@ -6,10 +6,10 @@ export const useDarkMode = (key, initialValue) => {
 
     const [ darkMode, setDarkMode] = useLocalStorage(key, initialValue);
 
-    const changeDarkMode = event => {
-        event.preventDefault();
-        return darkMode ? setDarkMode(false) : setDarkMode(true);
-    }
+    // const changeDarkMode = event => {
+    //     event.preventDefault();
+    //     return darkMode ? setDarkMode(false) : setDarkMode(true);
+    // }
 
     useEffect(() => {
         if (darkMode) {
@@ -19,7 +19,7 @@ export const useDarkMode = (key, initialValue) => {
         }
     }, [ darkMode ]);
 
-    return [ darkMode, setDarkMode, changeDarkMode ]
+    return [ darkMode, setDarkMode ]
 };
 
 export default useDarkMode;
